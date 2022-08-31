@@ -1,9 +1,11 @@
 const switchBtn = document.querySelector('.btn-switch')
 const lightbulb = document.querySelector('.lightbulb')
 const title = document.querySelector('h1')
+const audio = document.querySelector('#audio')
 
 let showLight = false
 switchBtn.addEventListener('click', () => {
+  audio.play()
   if (showLight) {
     lightbulb.classList.remove('active')
     showLight = false
