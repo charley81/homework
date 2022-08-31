@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@700&display=swap');
 
-:root  {
-  --color-primary: #FFD517;
-  --color-light: #FFFCF0;
-  --color-dark: #211C03;
-  --color-grey-light: #C9C6B7;
+:root {
+  --color-primary: #ffd517;
+  --color-light: #fffcf0;
+  --color-dark: #211c03;
+  --color-grey-light: #c9c6b7;
   --color-grey-dark: #494842;
   --font-family: 'DynaPuff', cursive;
   --border-radius: 4px;
@@ -59,10 +59,6 @@ img {
   border: 1px solid transparent;
   cursor: pointer;
   transition: var(--tranistion);
-}
-
-.btn:hover {
-  opacity: 0.7;
 }
 
 .btn-switch {
