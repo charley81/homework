@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@700&display=swap');
+
+:root  {
+  --color-primary: #FFD517;
+  --color-light: #FFFCF0;
+  --color-dark: #211C03;
+  --color-grey-light: #C9C6B7;
+  --color-grey-dark: #494842;
+  --font-family: 'DynaPuff', cursive;
+  --border-radius: 4px;
+  --tranistion: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-family);
+  font-size: 16px;
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.container h1 {
+  font-size: 4rem;
+}
+
+.lightbulb {
+  rotate: 180deg;
+  margin: 4rem 0;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 1rem 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--tranistion);
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+.btn-switch {
+  background-color: var(--color-primary);
+}
