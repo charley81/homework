@@ -33,6 +33,20 @@ img {
   max-width: 100%;
 }
 
+.title {
+  animation-name: titleAnimation;
+  animation-duration: 1s;
+}
+
+@keyframes titleAnimation {
+  0% {
+    transform: translateX(-2000px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .container {
   max-width: 700px;
   margin: auto;
@@ -63,4 +77,9 @@ img {
 
 .btn-switch {
   background-color: var(--color-primary);
+}
+
+/* utiltiy */
+.rotate {
+  transform: rotate(60deg);
 }
