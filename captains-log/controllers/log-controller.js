@@ -41,8 +41,62 @@ const createNew = (req, res) => {
   })
 }
 
+// @desc get a signle log
+// route GET /logs/:id
+// @access public
+const singleLog = (req, res) => {
+  logModel.findById(req.params.id, (error, foundLog) => {
+    if (error) {
+      res.status(400).json({ error })
+    } else {
+      res.status(200)
+      res.render('logs/Show', { log: foundLog })
+    }
+  })
+}
+
+const editForm = (req, res) => {
+  logModel.findById(req.params.id, (error, foundLog) => {
+    if (error) {
+      res.status(400).json({ error })
+    } else {
+      res.status(200)
+      res.render('logs/Edit', { log: foundLog })
+    }
+  })
+}
+
+const updateLog = (req, res) => {
+  logModel.findByIdAndUpdate(req.params.id, req.body, (error, foundLog) => {
+    if (error) {
+      res.status(400).json({ error })
+    } else {
+      res.status(200)
+      res.redirect('/logs')
+    }
+  })
+}
+
+// @desc delete a single log
+// @router DELETE /logs/:id
+// access public
+const deleteLog = (req, res) => {
+  logModel.findByIdAndDelete(req.params.id, (error, deletedLog) => {
+    if (error) {
+      res.status(400).json({ error })
+    } else {
+      res.status(200)
+      res.redirect('/logs')
+    }
+  })
+}
+
 module.exports = {
   allLogs,
   newForm,
   createNew,
+  singleLog,
+  deleteLog,
+  editForm,
+  updateLog,
 }

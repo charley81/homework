@@ -44,6 +44,22 @@ li {
   gap: 2rem;
 }
 
+.header a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* show */
+.show {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.show form {
+  margin-top: 1rem;
+}
+
 /* form */
 .form-control {
   margin: 2rem 0;
@@ -73,9 +89,18 @@ input[type='checkbox'] {
 
 /* utilities */
 .wrapper {
-  max-width: var(--MaxWidth);
+  max-width: var(--maxWidth);
   margin: 8rem auto 0;
   padding: 1rem;
+}
+
+.delete {
+  color: red;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  margin-left: 1rem;
+  cursor: pointer;
 }
 
 .btn {
@@ -114,4 +139,8 @@ input[type='checkbox'] {
   padding: 1rem;
   margin: 1rem 0;
   border-radius: var(--border-radius);
+}
+
+a.item {
+  color: var(--color-dark);
 }

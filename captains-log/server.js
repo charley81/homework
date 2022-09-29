@@ -3,12 +3,16 @@ const app = express()
 const colors = require('colors')
 const dotenv = require('dotenv').config()
 const mongoConfig = require('./config/db')
+const methodOverride = require('method-override')
 
 const PORT = process.env.PORT || 3000
 
 // body parser middleware need this or req.body will be undefined
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
+
+// method override to make delete and put request
+app.use(methodOverride('_method'))
 
 // css middleware
 app.use(express.static('public'))

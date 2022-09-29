@@ -18,7 +18,7 @@ class Index extends React.Component {
               const { title, entry, broken, _id } = log
 
               return (
-                <ul key={_id} className="item">
+                <a href={`/logs/${_id}`} key={_id} className="item">
                   <li>
                     <span className="bold">Title: </span> {title}
                   </li>
@@ -29,7 +29,7 @@ class Index extends React.Component {
                     <span className="bold">Broken: </span>
                     {broken ? 'Yes' : 'No'}
                   </li>
-                </ul>
+                </a>
               )
             })}
           </div>
