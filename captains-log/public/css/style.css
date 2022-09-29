@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+/* everything */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* root */
 :root {
   --color-primary: #276fbf;
   --color-light: #f6fbff;
   --color-dark: #061423;
+  --color-grey-light: #cfd3d7;
   --transition: all 0.3s ease;
   --border-radius: 4px;
   --maxWidth: 900px;
@@ -17,6 +20,7 @@
   --font-family: ' Roboto ', sans-serif;
 }
 
+/* base */
 body {
   font-family: var(--font-family);
   line-height: 1.5;
@@ -31,6 +35,13 @@ a {
 
 li {
   list-style: none;
+}
+
+/* index */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 /* form */
@@ -62,8 +73,9 @@ input[type='checkbox'] {
 
 /* utilities */
 .wrapper {
-  max-width: var(--formMaxWidth);
+  max-width: var(--MaxWidth);
   margin: 8rem auto 0;
+  padding: 1rem;
 }
 
 .btn {
@@ -84,4 +96,22 @@ input[type='checkbox'] {
   background-color: transparent;
   border: 1px solid var(--color-primary);
   color: var(--color-dark);
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.item {
+  border: 1px solid var(--color-grey-light);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: var(--border-radius);
 }
