@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
 const colors = require('colors')
+const dotenv = require('dotenv').config()
+const mongoConfig = require('./config/db')
 
 const PORT = process.env.PORT || 3000
 
@@ -19,3 +21,5 @@ app.engine('js', require('express-react-views').createEngine())
 app.use('/logs', require('./routes/log-routes'))
 
 app.listen(PORT, () => console.log(`listening on port: ${PORT}`))
+
+mongoConfig()

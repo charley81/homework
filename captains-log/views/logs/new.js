@@ -4,7 +4,7 @@ const Layout = require('../layout/layout')
 class New extends React.Component {
   render() {
     return (
-      <Layout>
+      <Layout title="new form" group="logs">
         <div className="wrapper">
           <h1>Create A New Log</h1>
           <form action="/logs" method="POST">
@@ -20,13 +20,14 @@ class New extends React.Component {
             </div>
             <div className="form-control">
               <label htmlFor="entry">Entry: </label>
-              <input
-                type="text"
-                id="entry"
+              <textarea
                 name="entry"
+                id="entry"
+                cols="30"
+                rows="10"
                 placeholder="enter entry..."
                 required
-              />
+              ></textarea>
             </div>
             <div className="form-control broken">
               <label htmlFor="broken">Broken: </label>

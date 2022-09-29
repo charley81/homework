@@ -44,7 +44,8 @@ label {
   margin-bottom: 0.25rem;
 }
 
-input {
+input,
+textarea {
   display: block;
   padding: 1rem;
   width: 100%;

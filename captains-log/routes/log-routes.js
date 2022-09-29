@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { allLogs, newForm } = require('../controllers/log-controller')
+const { allLogs, newForm, createNew } = require('../controllers/log-controller')
 
 // get all logs
 router.get('/', allLogs)
@@ -9,5 +9,6 @@ router.get('/', allLogs)
 router.get('/new', newForm)
 
 // create new log
+router.post('/', createNew)
 
 module.exports = router
