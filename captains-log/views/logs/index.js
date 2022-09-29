@@ -11,9 +11,12 @@ class Index extends React.Component {
           <h1>All Logs</h1>
           <div className="items">
             {logs.map(log => {
+              const { title, entry, broken } = log
+
               return (
                 <ul>
-                  <li>{log.title}</li>
+                  <li>{title}</li>
+                  <li>{entry}</li>
                 </ul>
               )
             })}
