@@ -1,4 +1,5 @@
 const logModel = require('../models/log-model')
+const logSeed = require('../models/log-seed')
 
 // @desc get all logs
 // @router GET /logs
@@ -67,12 +68,18 @@ const editForm = (req, res) => {
 }
 
 const updateLog = (req, res) => {
+  if (req.body.broken === 'on') {
+    req.body.broken = true
+  } else {
+    req.body.broken = false
+  }
+
   logModel.findByIdAndUpdate(req.params.id, req.body, (error, foundLog) => {
     if (error) {
       res.status(400).json({ error })
     } else {
       res.status(200)
-      res.redirect('/logs')
+      res.redirect(`/logs/${req.params.id}`)
     }
   })
 }
@@ -91,6 +98,34 @@ const deleteLog = (req, res) => {
   })
 }
 
+const seedStaterData = (req, res) => {
+  logModel.deleteMany({}, (error, deletedLogs) => {
+    if (error) {
+      res.status(400).json({ error })
+    } else {
+      logModel.create(logSeed, (error, createdLog) => {
+        if (error) {
+          res.status(400).json({ error })
+        } else {
+          res.status(200)
+          res.redirect('/logs')
+        }
+      })
+    }
+  })
+}
+
+const clearSeedData = (req, res) => {
+  logModel.deleteMany({}, (error, deletedLogs) => {
+    if (error) {
+      res.status(400).json({ error })
+    } else {
+      res.status(200)
+      res.redirect('/logs')
+    }
+  })
+}
+
 module.exports = {
   allLogs,
   newForm,
@@ -99,4 +134,6 @@ module.exports = {
   deleteLog,
   editForm,
   updateLog,
+  seedStaterData,
+  clearSeedData,
 }

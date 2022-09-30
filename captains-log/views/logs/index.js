@@ -15,7 +15,7 @@ class Index extends React.Component {
 
           <div className="items">
             {logs.map(log => {
-              const { title, entry, broken, _id } = log
+              const { title, entry, broken, _id, createdAt, updatedAt } = log
 
               return (
                 <a href={`/logs/${_id}`} key={_id} className="item">
@@ -28,6 +28,12 @@ class Index extends React.Component {
                   <li>
                     <span className="bold">Broken: </span>
                     {broken ? 'Yes' : 'No'}
+                  </li>
+                  <li>
+                    <span className="bold">Created: </span> {String(createdAt)}
+                  </li>
+                  <li>
+                    <span className="bold">Updated: </span> {String(updatedAt)}
                   </li>
                 </a>
               )

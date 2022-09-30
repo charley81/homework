@@ -49,6 +49,10 @@ li {
   text-decoration: underline;
 }
 
+.item li {
+  margin: 0.5rem 0;
+}
+
 /* show */
 .show {
   max-width: 600px;
@@ -92,6 +96,10 @@ input[type='checkbox'] {
   max-width: var(--maxWidth);
   margin: 8rem auto 0;
   padding: 1rem;
+}
+
+.edit {
+  color: var(--color-primary);
 }
 
 .delete {
