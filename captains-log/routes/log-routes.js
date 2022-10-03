@@ -40,7 +40,4 @@ router.get('/clear', clearSeedData)
 // get single log
 router.get('/:id', singleLog)
 
-// upload image
-// router.post('/upload', uploadImage)
-
 module.exports = router
