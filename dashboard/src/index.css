@@ -1,5 +1,10 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -7,7 +12,68 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app {
+  padding: 4rem 1rem;
+  overflow: hidden;
+  height: 100vh;
+  display: grid;
+  gap: 2rem;
+  grid-template-areas:
+    'sidebar reviews average anaylsis'
+    'sidebar visitors visitors visitors';
+}
+
+.sidebar {
+  padding: 2rem;
+  grid-area: sidebar;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sidebar p {
+  margin: 0.5rem 0;
+}
+
+.reviews {
+  padding: 1rem;
+  grid-area: reviews;
+  background-color: #eee;
+}
+
+.average {
+  padding: 1rem;
+  grid-area: average;
+  background-color: #eee;
+}
+
+.analysis {
+  padding: 1rem;
+  grid-area: anaylsis;
+  background-color: #eee;
+}
+
+.analysis .totals {
+  margin-top: 4rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.visitors {
+  padding: 1rem;
+  grid-area: visitors;
+  background-color: #eee;
+}
+
+.empty {
+  width: 80%;
+  height: 80%;
+  background-color: #ccc;
+  margin: 1rem auto;
 }
