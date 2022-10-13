@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 const Score = ({ info }) => {
-  const [score, setScore] = useState('')
+  const [score, setScore] = useState(0)
   return (
     <div>
       <h3>Score: {score}</h3>
