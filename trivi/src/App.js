@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+/** @jsxImportSource @emotion/react */
+import { useState } from 'react'
+import { Button, Header, Info, Score } from './components'
 
 function App() {
+  const [questionData, setQuestionData] = useState('')
+
+  const getQuestionHandler = async () => {
+    const response = await fetch('http://jservice.io/api/random')
+    const data = await response.json()
+    setQuestionData(data)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header text="Trivi" />
+      <Score info={questionData} />
+      <Button onGetQuestion={getQuestionHandler}>Get Question</Button>
+      <Info info={questionData} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
