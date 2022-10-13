@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { useState } from 'react'
 import { Button, Header, Info, Score } from './components'
+import ScoreButtons from './components/score-buttons'
 
 function App() {
   const [questionData, setQuestionData] = useState('')
@@ -15,7 +16,8 @@ function App() {
     <div>
       <Header text="Trivi" />
       <Score info={questionData} />
-      <Button onGetQuestion={getQuestionHandler}>Get Question</Button>
+      <ScoreButtons />
+      <Button onGetQuestion={getQuestionHandler}>Play</Button>
       <Info info={questionData} />
     </div>
   )
