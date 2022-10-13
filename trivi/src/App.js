@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { useState } from 'react'
-import { Button, Header, Info, Score } from './components'
-import ScoreButtons from './components/score-buttons'
+import { Button, Header, Info, Score, ScoreButtons } from './components'
 
 function App() {
   const [questionData, setQuestionData] = useState('')
