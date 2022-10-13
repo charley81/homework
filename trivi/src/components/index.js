@@ -6,5 +6,16 @@ import Stats from './stats'
 import Answer from './answer'
 import Question from './question'
 import ScoreButtons from './score-buttons'
+import ScoreWrap from './score-wrap'
 
-export { Button, Header, Info, Score, Stats, Answer, Question, ScoreButtons }
+export {
+  Button,
+  Header,
+  Info,
+  Score,
+  Stats,
+  Answer,
+  Question,
+  ScoreButtons,
+  ScoreWrap
+}

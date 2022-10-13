@@ -1,23 +1,26 @@
 /** @jsxImportSource @emotion/react */
-import { useState } from 'react'
-import { Button, Header, Info, Score, ScoreButtons } from './components'
+import { useState, useEffect } from 'react'
+import { Button, Header, Info, ScoreWrap } from './components'
 
 function App() {
   const [questionData, setQuestionData] = useState('')
 
   const getQuestionHandler = async () => {
-    const response = await fetch('http://jservice.io/api/random')
-    const data = await response.json()
-    setQuestionData(data)
+    try {
+      const response = await fetch('http://jservice.io/api/random')
+      const data = await response.json()
+      setQuestionData(data)
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   return (
     <div>
       <Header text="Trivi" />
-      <Score info={questionData} />
-      <ScoreButtons />
+      <ScoreWrap />
       <Button onGetQuestion={getQuestionHandler}>Play</Button>
-      <Info info={questionData} />
+      <Info data={questionData} />
     </div>
   )
 }

@@ -1,12 +1,12 @@
 import React from 'react'
 import { Stats, Answer, Question } from './index'
 
-const Info = ({ info }) => {
+const Info = ({ data }) => {
   return (
     <div>
-      <Stats stats={info} />
-      <Question question={info} />
-      <Answer answer={info} />
+      <Stats stats={data} />
+      <Answer answer={data} />
+      <Question question={data} />
     </div>
   )
 }
