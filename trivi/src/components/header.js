@@ -6,7 +6,8 @@ const Header = ({ text }) => {
     <header
       css={css`
         h1 {
-          font-size: 2rem;
+          font-size: 4rem;
+          text-align: center;
         }
       `}
     >

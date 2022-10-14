@@ -1,4 +1,5 @@
 /** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react'
 import { useState } from 'react'
 import { Button, Header, Info, ScoreWrap } from './components'
 
@@ -16,7 +17,17 @@ function App() {
   }
 
   return (
-    <div>
+    <div
+      css={css`
+        max-width: var(--max-width);
+        margin: auto;
+        padding: 1rem;
+
+        @media screen and (min-width: 768px) {
+          max-width: var(--max-width-large);
+        }
+      `}
+    >
       <Header text="Trivi" />
       <ScoreWrap value={questionData} />
       <Button onGetQuestion={getQuestionHandler}>Play</Button>

@@ -1,7 +1,19 @@
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react'
+
 const Score = ({ newScore }) => {
   return (
-    <div>
-      <h3>Score: {newScore}</h3>
+    <div
+      css={css`
+        span {
+          font-weight: 400;
+          color: var(--color-grey-dark);
+        }
+      `}
+    >
+      <h2 className="test">
+        Score: <span>{newScore}</span>
+      </h2>
     </div>
   )
 }
