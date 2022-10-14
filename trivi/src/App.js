@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Button, Header, Info, ScoreWrap } from './components'
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
   return (
     <div>
       <Header text="Trivi" />
-      <ScoreWrap />
+      <ScoreWrap value={questionData} />
       <Button onGetQuestion={getQuestionHandler}>Play</Button>
       <Info data={questionData} />
     </div>

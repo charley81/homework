@@ -1,12 +1,11 @@
 import React from 'react'
-import Button from './button'
 
-const ScoreButtons = () => {
+const ScoreButtons = ({ onScoreIncrement, onScoreDecrement, onScoreReset }) => {
   return (
     <div>
-      <Button>Increase</Button>
-      <Button>Decrease</Button>
-      <Button>Reset</Button>
+      <button onClick={onScoreIncrement}>Increase</button>
+      <button onClick={onScoreDecrement}>Decrease</button>
+      <button onClick={onScoreReset}>Reset</button>
     </div>
   )
 }

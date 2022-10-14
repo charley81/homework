@@ -1,10 +1,25 @@
-import React from 'react'
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react'
+import { useState } from 'react'
 
-const Question = ({ question }) => {
+const Question = ({ question, onChangeCount }) => {
+  const [hidden, setHidden] = useState(true)
+
+  const handleShowQuestion = () => {
+    console.log('clicked')
+    setHidden(current => !current)
+  }
+
   return (
-    <div>
-      <h3>Question: </h3>
-      <p>{question[0]?.question}</p>
+    <div
+      css={css`
+        .hidden {
+          display: none;
+        }
+      `}
+    >
+      <button onClick={handleShowQuestion}>Reveal Question</button>
+      <p className={hidden ? 'hidden' : ''}>{question[0]?.question}</p>
     </div>
   )
 }
