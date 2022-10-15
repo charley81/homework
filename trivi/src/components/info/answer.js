@@ -11,7 +11,6 @@ const Answer = ({ answer }) => {
         }
       `}
     >
-      <h2>Answer: </h2>
       <p>{answer[0]?.question}</p>
     </div>
   )

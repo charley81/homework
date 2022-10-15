@@ -2,12 +2,14 @@
 import { css } from '@emotion/react'
 import { useState } from 'react'
 
-const Question = ({ question, onChangeCount }) => {
+const Question = ({ question }) => {
   const [hidden, setHidden] = useState(true)
 
   const handleShowQuestion = () => {
-    console.log('clicked')
     setHidden(current => !current)
+    setTimeout(() => {
+      setHidden(current => !current)
+    }, 2000)
   }
 
   return (
