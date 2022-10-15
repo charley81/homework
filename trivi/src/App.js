@@ -7,7 +7,7 @@ import Categories from './components/play/categories'
 function App() {
   const [questionData, setQuestionData] = useState('')
   const [category, setCategory] = useState('')
-  const [id, setId] = useState('')
+  const [id, setId] = useState(3)
   const [catQuestion, setCatQuestion] = useState('')
 
   const getQuestionHandler = async () => {

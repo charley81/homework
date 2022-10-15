@@ -34,6 +34,7 @@ const Categories = ({ onGetCategory }) => {
       `}
     >
       <select name="categories" id="categories" onChange={handleChange}>
+        <option value="">Select a Category</option>
         {categoriesArray.map(item => {
           const { id, title } = item
           return (

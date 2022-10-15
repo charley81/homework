@@ -8,11 +8,11 @@ const ScoreWrap = ({ value }) => {
   const questionValue = value?.value
 
   const handleScoreIncrement = () => {
-    setScore(currentScore => (currentScore += questionValue))
+    value && setScore(currentScore => (currentScore += questionValue))
   }
 
   const handleScoreDecrement = () => {
-    setScore(currentScore => (currentScore -= questionValue))
+    value && setScore(currentScore => (currentScore -= questionValue))
   }
 
   const handleScoreReset = () => {
