@@ -13,6 +13,7 @@ const ScoreButtons = ({ onScoreIncrement, onScoreDecrement, onScoreReset }) => {
           background: inherit;
           border: 1px solid var(--color-dark);
           padding: 0.5rem;
+          cursor: pointer;
           width: 100%;
           margin: 0.25rem;
           border-radius: var(--border-radius);

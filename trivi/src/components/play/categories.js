@@ -2,19 +2,24 @@
 import { css } from '@emotion/react'
 import { useEffect, useState } from 'react'
 
-const Categories = () => {
+const Categories = ({ onGetCategory }) => {
   const [categories, setCategories] = useState('')
+  const [selectedCategory, setSelectedCategory] = useState('')
 
   const categoriesArray = [...categories]
 
   const getCategories = async () => {
-    const response = await fetch('http://jservice.io/api/categories?count=10')
+    const response = await fetch('http://jservice.io/api/categories?count=100')
     const data = await response.json()
     setCategories(data)
   }
   useEffect(() => {
     getCategories()
   }, [])
+
+  const handleChange = event => {
+    onGetCategory(event.target.value)
+  }
 
   return (
     <div
@@ -23,13 +28,19 @@ const Categories = () => {
           width: 100%;
           padding: 0.5rem;
           margin-bottom: 1rem;
+          background: inherit;
+          border-radius: var(--border-radius);
         }
       `}
     >
-      <select name="categories" id="categories">
+      <select name="categories" id="categories" onChange={handleChange}>
         {categoriesArray.map(item => {
           const { id, title } = item
-          return <option key={id}>{title}</option>
+          return (
+            <option key={id} value={title}>
+              {title}
+            </option>
+          )
         })}
       </select>
     </div>

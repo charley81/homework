@@ -5,7 +5,7 @@ import ScoreButtons from './score-buttons'
 const ScoreWrap = ({ value }) => {
   const [score, setScore] = useState(0)
 
-  const questionValue = value[0]?.value
+  const questionValue = value?.value
 
   const handleScoreIncrement = () => {
     setScore(currentScore => (currentScore += questionValue))

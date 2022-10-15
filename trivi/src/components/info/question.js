@@ -25,6 +25,7 @@ const Question = ({ question }) => {
           font-size: 1rem;
           font-family: var(--font-family);
           margin-bottom: 1rem;
+          cursor: pointer;
           transition: var(--transition);
 
           &:hover {
@@ -44,7 +45,9 @@ const Question = ({ question }) => {
       `}
     >
       <button onClick={handleShowQuestion}>Reveal Question</button>
-      <p className={hidden ? 'hidden' : ''}>{question[0]?.answer}</p>
+      <p className={hidden ? 'hidden' : ''}>
+        {question ? question?.answer : 'There is no question yet'}
+      </p>
     </div>
   )
 }

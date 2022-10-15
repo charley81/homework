@@ -15,6 +15,7 @@ const Button = ({ children, onGetQuestion }) => {
         font-size: 1rem;
         font-family: var(--font-family);
         margin-bottom: 2rem;
+        cursor: pointer;
         transition: var(--transition);
 
         &:hover {

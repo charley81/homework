@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 
-const Stats = ({ stats }) => {
-  const value = stats[0]?.value
+const Stats = ({ stats, category }) => {
+  const value = stats?.value
 
   return (
     <div
@@ -21,7 +21,7 @@ const Stats = ({ stats }) => {
       `}
     >
       <h2>
-        Category: <span>{stats[0]?.category.title}</span>
+        Category: <span>{category}</span>
       </h2>
       <h2>
         Value: <span>{value ? value : 'No Value'}</span>
