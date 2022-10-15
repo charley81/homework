@@ -2,6 +2,7 @@
 import { css } from '@emotion/react'
 import { useState } from 'react'
 import { Button, Header, Info, ScoreWrap } from './components'
+import Categories from './components/play/categories'
 
 function App() {
   const [questionData, setQuestionData] = useState('')
@@ -30,6 +31,7 @@ function App() {
     >
       <Header text="Trivi" />
       <ScoreWrap value={questionData} />
+      <Categories />
       <Button onGetQuestion={getQuestionHandler}>Play</Button>
       <Info data={questionData} />
     </div>
