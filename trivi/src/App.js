@@ -57,7 +57,9 @@ function App() {
       <Header text="Trivi" />
       <ScoreWrap value={catQuestion} />
       <Categories onGetCategory={getCategory} />
-      <Button onGetQuestion={getQuestionHandler}>Play</Button>
+      <Button onGetQuestion={getQuestionHandler} data={catQuestion}>
+        Play
+      </Button>
       <Info data={catQuestion} category={category} />
     </div>
   )

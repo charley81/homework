@@ -11,7 +11,7 @@ const Answer = ({ answer }) => {
         }
       `}
     >
-      <p>{answer?.question}</p>
+      <p>{answer ? answer?.question : 'Sorry no answer for this one.'}</p>
     </div>
   )
 }
