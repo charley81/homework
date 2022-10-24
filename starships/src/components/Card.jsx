@@ -1,7 +1,6 @@
 import { css } from '@emotion/react'
 
 export default function Card({ ship }) {
-  console.log(ship)
   return (
     <div
       css={css`
